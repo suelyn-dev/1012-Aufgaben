@@ -81,32 +81,45 @@ function kartenFilter(liste) {
         verkaufbtn.addEventListener("click", () => {
             alert(`Du hast das Element ${gegenstand.name} verkauft!`);
             goldBestand += gegenstand.wert;
-            
+
             document.getElementById("gold").textContent = "Mein Gold: " + goldBestand + " Goldstücke";
 
             // Element aus dem Array filtern
             inventar = inventar.filter((item) => item.id !== gegenstand.id);
-            
+
             // Karten im HTML neu zeichnen
             kartenFilter(inventar);
+
+            //Vermögen neu berechnen
+            const aktuellesVermoegen = inventar.reduce((summe, item) => summe + item.wert, 0);
+            document.getElementById("wert").textContent = "Sachvermögen: " + aktuellesVermoegen + " Goldstücke";
         })
         karte.append(verkaufbtn);
 
         //Heiltrank
-        if(gegenstand.typ==="trank"){
+        if (gegenstand.typ === "trank") {
             let trinkbtn = document.createElement("button")
             trinkbtn.textContent = "trinken"
             trinkbtn.className = "drink"
             karte.append(trinkbtn)
 
-            trinkbtn.addEventListener("click",() => {
+            trinkbtn.addEventListener("click", () => {
                 inventar = inventar.filter((item) => item.id !== gegenstand.id);
                 kartenFilter(inventar);
+                
+                //Vermögen anpassen
+                const aktuellesVermoegen = inventar.reduce((summe, item) => summe + item.wert, 0);
+                document.getElementById("wert").textContent = "Sachvermögen: " + aktuellesVermoegen + " Goldstücke";
             })
         }
 
         invContainer.append(karte);
     });
+    //Zähler wenn Gegenstände verschwinden
+    let anzGegenstaende = document.getElementById("anzahl");
+    if (anzGegenstaende) {
+        anzGegenstaende.textContent = "Gegenstände im Rucksack: " + invContainer.childElementCount;
+    }
 }
 
 // ########## FILTER FUNCTIONS ##########
@@ -127,10 +140,10 @@ function sortiereInventar(sortierWert) {
     // Wegen Referenzproblem
     let kopie = [...inventar];
 
-    
+
     if (sortierWert === 'wert') {
         kopie.sort((a, b) => a.wert - b.wert);       // Günstigste zuerst
-    } 
+    }
     else if (sortierWert === 'gewicht') {
         kopie.sort((a, b) => a.gewicht - b.gewicht); // Leichteste zuerst
     }
@@ -153,7 +166,7 @@ document.getElementById("wert").textContent = "Sachvermögen: " + vermoegen + " 
 
 const trageGewicht = inventar.reduce((summe, gegenstand) => {
     return summe + gegenstand.gewicht
-},0)
+}, 0)
 
 console.log(trageGewicht);
 
@@ -167,8 +180,8 @@ if (trageGewicht > 20) {
     alertBox.textContent = "⚡ Maximal 20 Gewichtseinheiten ⚡"; // Löscht die Warnung
 }
 
-// ########## Anzahl ##########
+/* // ########## Anzahl ##########LÖSCHEN
 let anzGegenstaende = document.getElementById("anzahl")
 let anzahl = invContainer.childElementCount;
 
-anzGegenstaende.textContent = "Gegenstände im Rucksack: " + anzahl;
+anzGegenstaende.textContent = "Gegenstände im Rucksack: " + anzahl; */
