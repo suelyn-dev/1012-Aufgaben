@@ -37,6 +37,9 @@ const invContainer = document.getElementById("inventar-container");
 
 kartenFilter(inventar)
 
+// ########## Gold ##########
+let goldBestand = 0 // weiter in --> function kartenFilter(liste)
+
 function kartenFilter(liste) {
     invContainer.textContent = "";
 
@@ -88,6 +91,19 @@ function kartenFilter(liste) {
             kartenFilter(inventar);
         })
         karte.append(verkaufbtn);
+
+        //Heiltrank
+        if(gegenstand.typ==="trank"){
+            let trinkbtn = document.createElement("button")
+            trinkbtn.textContent = "trinken"
+            trinkbtn.className = "drink"
+            karte.append(trinkbtn)
+
+            trinkbtn.addEventListener("click",() => {
+                inventar = inventar.filter((item) => item.id !== gegenstand.id);
+                kartenFilter(inventar);
+            })
+        }
 
         invContainer.append(karte);
     });
@@ -151,5 +167,3 @@ if (trageGewicht > 20) {
     alertBox.textContent = "⚡ Maximal 20 Gewichtseinheiten ⚡"; // Löscht die Warnung
 }
 
-// ########## Gold ##########
-let goldBestand = 0 // weiter in --> function kartenFilter(liste)
