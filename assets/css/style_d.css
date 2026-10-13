@@ -56,8 +56,16 @@ button {
 }
 
 #gewicht-box {
-    background-color: black;
+    background-color: #0e4731;
     width: fit-content;
     border-radius: 5px;
     padding: 1rem;
+}
+
+.sortieren {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center; 
 }

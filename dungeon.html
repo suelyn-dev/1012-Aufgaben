@@ -12,13 +12,11 @@
 <body>
     <header>
         <h1>Dungeon Manager</h1>
-    </header>
-    <main>
         <h2>Mein Inventar</h2>
         <h3 id="wert"></h3>
         <h3 id="anzahl"></h3>
         <h3 id="gold"></h3>
-
+    
         <div class="filter">
             <button onclick="filterInventar('all')">Alle</button>
             <button onclick="filterInventar('waffe')">Waffen</button>
@@ -26,12 +24,14 @@
             <button onclick="filterInventar('rüstung')">Rüstung</button>
             <button onclick="filterInventar('schmuck')">Schmuck</button>
         </div>
-
+    
         <div class="sortieren">
+            <h3 style="color:  antiquewhite;">Sortieren nach:</h3>
             <button onclick="sortiereInventar('wert')">Wert aufsteigend</button>
             <button onclick="sortiereInventar('gewicht')">Gewicht aufsteigend</button>
         </div>
-
+    </header>
+    <main>
 
         <div id="inventar-container"></div>
 
