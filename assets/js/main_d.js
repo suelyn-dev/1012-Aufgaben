@@ -147,7 +147,7 @@ const vermoegen = inventar.reduce((summe, gegenstand) => {
 
 console.log(vermoegen);
 
-document.getElementById("wert").textContent = "Sachvermögen: " + vermoegen + " €";
+document.getElementById("wert").textContent = "Sachvermögen: " + vermoegen + " Goldstücke";
 
 // ########## Gewicht ##########
 
@@ -167,3 +167,8 @@ if (trageGewicht > 20) {
     alertBox.textContent = "⚡ Maximal 20 Gewichtseinheiten ⚡"; // Löscht die Warnung
 }
 
+// ########## Anzahl ##########
+let anzGegenstaende = document.getElementById("anzahl")
+let anzahl = invContainer.childElementCount;
+
+anzGegenstaende.textContent = "Gegenstände im Rucksack: " + anzahl;
