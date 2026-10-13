@@ -1,4 +1,4 @@
-const inventar = [
+let inventar = [
     {
         id: 1,
         name: "Eisenschwert",
@@ -70,6 +70,25 @@ function kartenFilter(liste) {
         seltenheitInfo.textContent = "Seltenheit: " + gegenstand.seltenheit;
         karte.append(seltenheitInfo);
 
+        //Verkaufsbutton
+        let verkaufbtn = document.createElement("button")
+        verkaufbtn.textContent = "verkaufen"
+        verkaufbtn.className = "btn-verkauf"
+
+        verkaufbtn.addEventListener("click", () => {
+            alert(`Du hast das Element ${gegenstand.name} verkauft!`);
+            goldBestand += gegenstand.wert;
+            
+            document.getElementById("gold").textContent = "Mein Gold: " + goldBestand + " Goldstücke";
+
+            // Element aus dem Array filtern
+            inventar = inventar.filter((item) => item.id !== gegenstand.id);
+            
+            // Karten im HTML neu zeichnen
+            kartenFilter(inventar);
+        })
+        karte.append(verkaufbtn);
+
         invContainer.append(karte);
     });
 }
@@ -133,3 +152,4 @@ if (trageGewicht > 20) {
 }
 
 // ########## Gold ##########
+let goldBestand = 0 // weiter in --> function kartenFilter(liste)
