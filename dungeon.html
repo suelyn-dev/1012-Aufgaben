@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style_d.css">
+    <script src="assets/js/main_d.js" defer></script>
+    <title>Dungeon Manager</title>
+</head>
+
+<body>
+    <header>
+        <h1>Dungeon Manager</h1>
+    </header>
+    <main>
+        <h2>Mein Inventar</h2>
+        <h3 id="wert"></h3>
+        <h3 id="gold"></h3>
+
+        <div class="filter">
+            <button onclick="filterInventar('all')">Alle</button>
+            <button onclick="filterInventar('waffe')">Waffen</button>
+            <button onclick="filterInventar('trank')">Tränke</button>
+            <button onclick="filterInventar('rüstung')">Rüstung</button>
+            <button onclick="filterInventar('schmuck')">Schmuck</button>
+        </div>
+
+        <div class="sortieren">
+            <button onclick="sortiereInventar('wert')">Wert aufsteigend</button>
+            <button onclick="sortiereInventar('gewicht')">Gewicht aufsteigend</button>
+        </div>
+
+
+        <div id="inventar-container"></div>
+
+        <div id="gewicht-box">
+            <!-- Hier kommt nur der Text rein -->
+            <span id="gewicht"></span>
+            <!-- Hier kommt nur die Warnung rein -->
+            <span id="alert" style="color: red; font-weight: bold;"></span>
+        </div>
+
+    </main>
+    <footer>
+        <!-- Ein echter Link, der wie ein Button benutzt wird -->
+        <a href="index.html" class="btn-weiter">Zurück zur Raumstation</a>
+    </footer>
+</body>
+
+</html>

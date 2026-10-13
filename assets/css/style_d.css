@@ -1,0 +1,61 @@
+* {
+    font-family: monospace;
+    color: antiquewhite;
+}
+
+body {
+    background: url("../img/dungeon.png");
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 3rem;
+}
+
+.btn-weiter {
+    display: inline-block;
+    background-color: #1f9b6b; 
+    color: white;             
+    text-decoration: none;     
+    padding: 10px 20px;        
+    border-radius: 5px;       
+    margin-top: 1rem;
+}
+
+.btn-weiter:hover {
+    background-color: #ddc935;
+}
+
+#inventar-container {
+    display: flex;
+    flex-wrap: wrap;      
+    justify-content: space-around; 
+    gap: 20px;             
+    padding: 20px;
+}
+
+
+.inventar-karte {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 15px;             
+    background-color: mintcream;   
+    width: 200px;                 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+h3,
+p,
+button {
+    color: rgb(40, 38, 38);
+}
+
+#wert {
+    color: antiquewhite;
+
+}
+
+#gewicht-box {
+    background-color: black;
+    width: fit-content;
+    border-radius: 5px;
+    padding: 1rem;
+}

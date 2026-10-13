@@ -1,0 +1,74 @@
+* {
+    font-family: monospace;
+}
+
+#system-liste {
+    list-style: none;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 10px;
+}
+
+body {
+    background: url("../img/station.png");
+    background-size: cover;
+    background-attachment: fixed;
+
+    
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center; 
+    min-height: 100vh;      
+}
+
+.content {
+    background-color: white;
+    width: fit-content;
+    padding: 20px;          
+    border-radius: 8px;     
+}
+
+#stat {
+    display: flex;
+    gap: 20px;          
+    list-style: none;   
+    padding: 0;         
+}
+
+#map{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    list-style: none;
+    gap: 20px;
+}
+
+#map li {
+    border: 5px solid yellow;
+    padding: 5%;
+}
+
+#reparaturbtn {
+    background-color: aquamarine;
+    border-radius: 5px;
+}
+
+#reparaturbtn:hover {
+    background-color: rgb(179, 4, 141);
+}
+
+
+.btn-weiter {
+    display: inline-block;
+    background-color: #3b82f6; 
+    color: white;             
+    text-decoration: none;     
+    padding: 10px 20px;        
+    border-radius: 5px;       
+    margin-top: 1rem;
+}
+
+.btn-weiter:hover {
+    background-color: #2563eb;
+}
